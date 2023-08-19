@@ -19,7 +19,7 @@ var pass = document.getElementById("Password");
 // console.log(form?.children);
 
 // form?.addEventListener("submit", onClick)
-// function onClick(e){
+// function onClick(e)  {
 //     e.preventDefault();
 //     console.log('Name ' + na?.value);
 

@@ -45,6 +45,7 @@ const listItem = document.getElementsByClassName("list-item");
 // console.log(pElement)
 var body = document.body;
 var fst = document.body.children[0];
+
 //create text node
 //var text = document.createTextNode('Allah Hafiz');
 //create element node div

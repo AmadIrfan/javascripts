@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>CRUD</title>
+    </head>
+
+    <body>
+        <h1 class="heading">
+            Amad Irfan
+        </h1>
+        <div class="input-group mb-3">
+            <input type="text" id="item" class="form-control" placeholder="User Name">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon">Button</button>
+        </div>
+        <div class="items" id="items"></div>
+        <ul class="list-group">
+        </ul>
+    </body>
+    <script>
+        const btn = document.querySelector("#button-addon");
+        btn?.addEventListener("click", btnPress);
+        // const list = document.querySelector(".list-group");
+        let array=[];
+        function btnPress(e) {
+            var item=document.getElementById("item").value;
+            array.push(item);
+            console.log(array);
+            var itemlist="";
+            array.map((card,index)=>{
+                itemlist+=`<p class="p-2 flex-grow-1 bd-highlight my-para"> ${card} </p> 
+            <button onclick="deleteitem(${index},array)" class="btn btn-outline-secondary me-1 Delete-item" id="Delete-item" type="button"> Delete </button>
+            <button class="btn btn-outline-secondary" id="Edit-item" type="button"> Edit </button>`;
+            })
+            document.getElementById("items").innerHTML=itemlist;
+            // let cTr = e.currentTarget;
+            // let inputValue = cTr.previousElementSibling.value;
+            // if (inputValue != "") {
+            //     let li = document.createElement("li");
+            //     li.classList.add("list-group-item", "mb-3", "d-flex", "bd-highlight");
+            //     //    let text= document.createTextNode(inputValue);
+            //     li.innerHTML = `<p class="p-2 flex-grow-1 bd-highlight my-para"> ${inputValue} </p> 
+            // <button onclick="deleteItem" class="btn btn-outline-secondary me-1 Delete-item" id="Delete-item" type="button"> Delete </button>
+            // <button class="btn btn-outline-secondary" id="Edit-item" type="button"> Edit </button>`;
+
+            //     list?.appendChild(li);
+            //     console.log(li);
+            // } else {
+            //     alert("Please enter a value");
+            // }
+        }
+        function deleteitem(item,array) {
+                console.log("delete", item);
+                console.log(array[item]);
+                delete array[item]
+                console.log(array)
+            }
+
+    </script>
+    <script src="JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</html>
